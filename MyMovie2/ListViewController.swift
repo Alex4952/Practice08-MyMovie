@@ -8,6 +8,8 @@
 
 import UIKit
 
+// 스토리보드에서 네비게이션 컨트롤러가 있을 경우 세그웨이 연결 시 show
+
 class ListViewController : UITableViewController {
 	
 //	var currentIndexPath : NSIndexPath?
@@ -149,6 +151,18 @@ class ListViewController : UITableViewController {
 			
 			return mvo.thumbnailImage! // 저장된 이미지를 리턴
 		}
+	}
+	
+	// 화면전환은 스토리보드의 세그웨이가 알아서 해줌
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		// sender 인자를 캐스팅하여 테이블 셀 객체로 변환한다.
+		let cell = sender as! MovieCell
+		// 세그웨이를 실행한 셀 객체 정보를 이용하여 몇번째 행이 선택되었는지 확인한다.
+		let path = self.tv.indexPathForCell(cell)
+		// API 영화 데이터 배열 중에서 선택된 행에 대한 데이터를 얻는다.
+		let param = self.list[path!.row]
+		// 세그웨이가 향할 목적지 뷰 컨트롤러 객체를 읽어와 mvo 변수에 데이터를 연결해준다.
+		(segue.destinationViewController as? DetailViewController)?.mvo = param
 	}
 	
 }

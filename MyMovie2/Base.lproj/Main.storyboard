@@ -121,6 +121,7 @@
                                     <outlet property="rating" destination="bfa-G2-PQj" id="HUF-Cs-jDH"/>
                                     <outlet property="thumbnail" destination="WSD-EA-9XQ" id="Ic3-fL-Jiy"/>
                                     <outlet property="title" destination="MG1-ef-Ypk" id="MAT-qK-nnE"/>
+                                    <segue destination="eXg-2I-22j" kind="show" id="xlY-Lq-o6b"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -138,6 +139,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7r4-Sh-161" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="679" y="403"/>
+        </scene>
+        <!--영화제목이 들어갈 자리-->
+        <scene sceneID="pdM-ZB-skp">
+            <objects>
+                <viewController storyboardIdentifier="DV" id="eXg-2I-22j" customClass="DetailViewController" customModule="MyMovie2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hUi-wn-aFs"/>
+                        <viewControllerLayoutGuide type="bottom" id="oEI-Yc-Lh1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hvu-Lh-5wx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhG-Uh-ccQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oEI-Yc-Lh1" firstAttribute="top" secondItem="bhG-Uh-ccQ" secondAttribute="bottom" id="bLD-XR-OKg"/>
+                            <constraint firstAttribute="trailing" secondItem="bhG-Uh-ccQ" secondAttribute="trailing" id="fg3-9q-34v"/>
+                            <constraint firstItem="bhG-Uh-ccQ" firstAttribute="leading" secondItem="hvu-Lh-5wx" secondAttribute="leading" id="ihl-Wl-Vme"/>
+                            <constraint firstItem="bhG-Uh-ccQ" firstAttribute="top" secondItem="hvu-Lh-5wx" secondAttribute="top" id="wuh-Ao-UBE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="영화제목이 들어갈 자리" id="yyM-tG-thk"/>
+                    <connections>
+                        <outlet property="naviBar" destination="yyM-tG-thk" id="viN-yn-LXR"/>
+                        <outlet property="wv" destination="bhG-Uh-ccQ" id="JyR-UH-Udd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XTn-8Z-9Ph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1366" y="403"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nvm-6q-kuG">
