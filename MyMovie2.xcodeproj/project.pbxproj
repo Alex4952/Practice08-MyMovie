@@ -14,6 +14,7 @@
 		04F586591BF6DDFF00C78602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F586571BF6DDFF00C78602 /* LaunchScreen.storyboard */; };
 		04F586611BF6E77400C78602 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F586601BF6E77400C78602 /* MovieCell.swift */; settings = {ASSET_TAGS = (); }; };
 		04F586631BF6E78F00C78602 /* MovieVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F586621BF6E78F00C78602 /* MovieVO.swift */; settings = {ASSET_TAGS = (); }; };
+		04F586651BF6EBB600C78602 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F586641BF6EBB600C78602 /* ListViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		04F5865A1BF6DDFF00C78602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F586601BF6E77400C78602 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		04F586621BF6E78F00C78602 /* MovieVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieVO.swift; sourceTree = "<group>"; };
+		04F586641BF6EBB600C78602 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				04F5865A1BF6DDFF00C78602 /* Info.plist */,
 				04F586601BF6E77400C78602 /* MovieCell.swift */,
 				04F586621BF6E78F00C78602 /* MovieVO.swift */,
+				04F586641BF6EBB600C78602 /* ListViewController.swift */,
 			);
 			path = MyMovie2;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				04F586511BF6DDFF00C78602 /* ViewController.swift in Sources */,
 				04F586631BF6E78F00C78602 /* MovieVO.swift in Sources */,
 				04F5864F1BF6DDFF00C78602 /* AppDelegate.swift in Sources */,
+				04F586651BF6EBB600C78602 /* ListViewController.swift in Sources */,
 				04F586611BF6E77400C78602 /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
