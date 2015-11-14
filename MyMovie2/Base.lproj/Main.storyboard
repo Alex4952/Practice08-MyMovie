@@ -2,13 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gh3-Qz-Hcj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--최신영화-->
         <scene sceneID="3wf-jU-qeV">
             <objects>
                 <tableViewController id="hHT-h8-EmX" customClass="ListViewController" customModule="MyMovie2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="D7h-Fb-tMe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="D7h-Fb-tMe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -21,25 +22,34 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9z-32-vga">
-                                            <rect key="frame" x="8" y="50" width="88" height="21"/>
+                                            <rect key="frame" x="8" y="50" width="260" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rating" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4B5-gc-vWt">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4B5-gc-vWt">
                                             <rect key="frame" x="510" y="29" width="49" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="49" id="NZS-JZ-1DT"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5K6-yi-7qq">
-                                            <rect key="frame" x="8" y="8" width="34" height="21"/>
+                                            <rect key="frame" x="8" y="8" width="260" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4B5-gc-vWt" firstAttribute="top" secondItem="LdH-aM-WSh" secondAttribute="topMargin" constant="21" id="r8d-o0-Npe"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4B5-gc-vWt" secondAttribute="trailing" constant="41" id="E9L-Zt-wNU"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="desc" destination="P9z-32-vga" id="ct1-Yw-nmn"/>
                                     <outlet property="rating" destination="4B5-gc-vWt" id="I5v-SH-3Rh"/>
@@ -53,6 +63,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="최신영화" id="BqZ-w0-T8E"/>
+                    <connections>
+                        <outlet property="tv" destination="D7h-Fb-tMe" id="o7D-5e-t8M"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7r4-Sh-161" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
