@@ -13,7 +13,7 @@ class MovieVO {
 	var description : String?
 	var detail : String?
 	var rating : Float?
-	var thunbnail : String?
+	var thumbnail : String?
 	var thumbnailImage : UIImage?
 }
 

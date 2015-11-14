@@ -24,6 +24,34 @@ class ListViewController : UITableViewController {
 		
 		// 3. 응답 출력
 		NSLog("API Result=%@", NSString(data: apidata!, encoding: NSUTF8StringEncoding)!)
+		
+		// 4. JSON 객체를 파싱하여 NSDictionary, NSArray 객체로 받음
+		// (NSDictionary로 받는 이유는 타입이 달라도 가능하기 때문)
+		do {
+			let result = try NSJSONSerialization.JSONObjectWithData(apidata!, options: []) as! NSDictionary
+			
+			// 5. 데이터 구조에 따라 차례대로 캐스팅하며 읽어온다.
+			let hoppin = result["hoppin"] as! NSDictionary
+			let movies = hoppin["movies"] as! NSDictionary
+			let movie = movies["movie"] as! NSArray
+			
+			// 6. 테이블 뷰 리스트를 구성할 데이터 형식
+			var mvo : MovieVO
+			
+			// 7. Iterator 처리를 하면서 API 데이터를 MovieVO 객체에 저장한다.
+			for row in movie {
+				mvo = MovieVO()
+				
+				mvo.title = row["title"] as? String
+				mvo.description = row["genreNames"] as? String
+				mvo.thumbnail = row["thumbnailImage"] as? String
+				mvo.detail = row["linkUrl"] as? String
+				mvo.rating = (row["ratingAverage"] as? NSString)!.floatValue
+			}
+			
+		} catch {
+			NSLog("Parse Error!!")
+		}
 	}
 
 	override func viewDidLoad() {
